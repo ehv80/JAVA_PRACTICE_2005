@@ -97,7 +97,7 @@ public class PruebaStatic
 		Character caracter = new Character('C');
 
 		// Método estático isLetter
-		If(Character.isLetter(caracter))
+		if(Character.isLetter(caracter))
 		{
 			System.out.println("Es una Letra !!! " );
 		}
