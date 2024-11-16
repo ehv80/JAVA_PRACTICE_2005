@@ -16,7 +16,7 @@ public class UsoClaseInteger {
         System.out.println("El resultado es: " + c.toString());
     }
 
-    public void main(String argv[]) {
+    public statis void main(String[] args) {
         new UsoClaseInteger();
     }
 }
