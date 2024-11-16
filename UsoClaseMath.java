@@ -13,7 +13,7 @@ public class UsoClaseMath {
         System.out.println("eL máximo entre 2 y 8 es                : " + Math.max(2, 8));
     }
 
-    public void main(String argv[]) {
+    public static void main(String[] args) {
         new UsoClaseMath();
     }
 }
