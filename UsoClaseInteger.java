@@ -13,7 +13,7 @@ public class UsoClaseInteger {
             c = new Integer(suma);
         }
         /* Convertimos el Integer a String usando el método toString() */
-        System.out.prinltn("El resultado es: " + c.toString());
+        System.out.println("El resultado es: " + c.toString());
     }
 
     public void main(String argv[]) {
