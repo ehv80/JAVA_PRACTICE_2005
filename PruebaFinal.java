@@ -7,4 +7,11 @@ public final class PruebaFinal {
     public PruebaFinal() {
 
     }
+
+    public static void main(String[] args) {
+        /* Instancio el objeto Perro y lo referencio con la variable p */
+        Perro p = new Perro();
+        p.camina();
+        p.corre();
+    }
 }
