@@ -18,7 +18,7 @@ public class PruebaClaseVector {
             v.addElement("NEGRO");
         }
         /* Muestro la cantidad de elementos del Vector */
-        System.out.println("El Vector tiene " + v.size() + "elementos");
+        System.out.println("El Vector tiene " + v.size() + " elementos");
         /* Muestro el contenido del Vector */
         System.out.println(v.toString());
         /*
