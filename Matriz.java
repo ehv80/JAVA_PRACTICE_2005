@@ -34,16 +34,13 @@ public class Matriz {
     }
 
     /* Este método muestra la matríz de forma entendible para nosotros */
-    public void muestraMatriz()
-    {
+    public void muestraMatriz() {
         /* Declaro i y j como locales al método */
         int i = 0;
         int j = 0;
-        for(i=0; i<3; i++)
-        {
-            for(j=0; j<3; j++)
-            {
-                System.out.print(matriz[i][j])
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                System.out.print(matriz[i][j]);
             }
             System.out.println();
         }
