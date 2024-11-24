@@ -2,7 +2,7 @@
  * arrojará la excepción NumberFormatException
  */
 /* Continuamos dentro del paquete pruebas */
-package pruebas;
+// package pruebas; Comentado para evitar la excepción de Clase no encontrada
 
 public class PruebaError2 {
     /* Tengo 2 objetos Srting instanciados con 2 y a */
