@@ -21,10 +21,16 @@ public class PruebaError {
         v.addElement(new String("Laura"));
         v.addElement(new String("Martín"));
         /* Note que el for intentará recorrer un vector de diez elementos */
-        for (i = 0; i < 10; i++) {
-            /* Tomo el elemento de la posición i y lo muestro */
-            System.out.println(v.get(i));
+        try {
+            for (i = 0; i < 10; i++) {
+                /* Tomo el elemento de la posición i y lo muestro */
+                System.out.println(v.get(i));
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(" Intentó sacar más elementos de los que había en el Vector!!! ");
+            System.out.println(e.toString());
         }
+
     }
 
     public static void main(String[] args) {
