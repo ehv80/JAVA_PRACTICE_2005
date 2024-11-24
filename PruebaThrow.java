@@ -9,10 +9,12 @@ public class PruebaThrow {
     }
 
     /* Éste método devuelve el resultado de la división */
-    public float divide(int a, int b) throws ArithmeticException
-    {
-        /* Esta línea provoca la excepción que el throws lanza hacia arriba en la pila de llamadas */
-        return (a/b)
+    public float divide(int a, int b) throws ArithmeticException {
+        /*
+         * Esta línea provoca la excepción que el throws lanza hacia arriba en la pila
+         * de llamadas
+         */
+        return (a / b);
     }
 
     public static void main(String[] args) {
