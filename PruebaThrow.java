@@ -17,6 +17,11 @@ public class PruebaThrow {
         return (a / b);
     }
 
+    /* Convierte de Object a Integer */
+    public Integer convertir(Object a) {
+        return ((Integer) a);
+    }
+
     public static void main(String[] args) {
         PruebaThrow p = new PruebaThrow();
         /*
@@ -24,11 +29,17 @@ public class PruebaThrow {
          */
         try {
             float c = p.divide(15, 0);
+            p.convertir(new Float(c));
         } catch (ArithmeticException ex) {
             /* Imprimimos en pantalla un mensaje de error */
             System.out.println(" Error de división por cero !!! ");
             /* Imprimimos el stack trace o pila de llamadas */
             ex.printStackTrace();
+        } catch (ClassCastException ex) {
+            System.out.println(" Error convirtiendo Float a Integer !!! ");
+            ex.printStackTrace();
+        } finally {
+            System.out.println(" FIN !!! ");
         }
     }
 }
