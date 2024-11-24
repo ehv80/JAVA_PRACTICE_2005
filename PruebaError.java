@@ -2,7 +2,7 @@
  * para analizar un poco la salida de error de Java 
  */
 // Vamos a crear un paquete de pruebas
-package pruebas;
+// package pruebas; Comentado para evitar la excepción de Clase no encontrada
 
 /* Importamos java.util.* para usar la clase Vector */
 import java.util.*;
