@@ -13,7 +13,19 @@ public class PruebaError2 {
     public PruebaError2() {
         int resultado = 0;
         /* Convierto de String a entero y sumo */
-        resultado = Integer.parseInt(a) + Integer.parseInt(b);
+        /*
+         * Ahora si, vamos a manejar el error, reemplazando la línea de la suma por las
+         * siguientes
+         * para asegurarnos la correcta ejecución del programa
+         */
+        try {
+            resultado = Integer.parseInt(a) + Integer.parseInt(b);
+        } catch (NumberFormatException ex) {
+            /* Como conocemos el error lo corregimos */
+            b = new String("0");
+            resultado = Integer.parseInt(a) + Integer.parseInt(b);
+        }
+
         /* Muestro el resultado */
         System.out.println("Resultado : " + resultado);
     }
