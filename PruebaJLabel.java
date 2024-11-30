@@ -11,7 +11,9 @@ import javax.swing.*;
 
 //import com.borland.jbcl.layout.*; // da error de compilación
 public class PruebaJLabel extends JFrame {
-    VerticalFlowLayout verticalFlowLayout1 = new VerticalFlowLayout(); // da error de compilación clase no existe
+    // VerticalFlowLayout verticalFlowLayout1 = new VerticalFlowLayout(); // da
+    // error de compilación clase no existe
+    FlowLayout flowLayout1 = new FlowLayout();
     JLabel LbUno = new JLabel();
     JLabel LbDos = new JLabel();
     JLabel LbTres = new JLabel();
@@ -22,7 +24,8 @@ public class PruebaJLabel extends JFrame {
     /* Constructor por defecto */
     public PruebaJLabel() {
         super.setTitle("Prueba JLabel");
-        this.getContentPane().setLayout(verticalFlowLayout1);
+        // this.getContentPane().setLayout(verticalFlowLayout1);
+        this.getContentPane().setLayout(flowLayout1);
         LbUno.setText("Etiqueta normal");
         LbDos.setToolTipText("");
         LbDos.setHorizontalAlignment(SwingConstants.RIGHT);
