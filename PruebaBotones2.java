@@ -1,7 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import com.borland.jbcl.layout.*; // da error de compilación
-import oracle.javatools.ui.layout.*;
+// import oracle.javatools.ui.layout.*; //da error de compilación
+// import oracle.ide.controls.*; //da error de compilación
 
 public class PruebaBotones2 extends JFrame {
         VerticalFlowLayout verticalFlowLayout1 = new VerticalFlowLayout();
