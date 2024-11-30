@@ -17,6 +17,7 @@ public class PruebaJRadioButton extends JFrame {
     JRadioButton JrBtnOpcionUno = new JRadioButton();
     JRadioButton JrBtnOpcionDos = new JRadioButton();
     JRadioButton JrBtnOpcionTres = new JRadioButton();
+    ButtonGroup grupoDeBotones = new ButtonGroup();
 
     /* Constructor por defecto */
     public PruebaJRadioButton() {
@@ -28,6 +29,9 @@ public class PruebaJRadioButton extends JFrame {
         JrBtnOpcionUno.setText("Opción Uno");
         JrBtnOpcionDos.setText("Opción Dos");
         JrBtnOpcionTres.setText("Opción Tres");
+        grupoDeBotones.add(JrBtnOpcionUno);
+        grupoDeBotones.add(JrBtnOpcionDos);
+        grupoDeBotones.add(JrBtnOpcionTres);
         this.getContentPane().add(JrBtnOpcionUno, null);
         this.getContentPane().add(JrBtnOpcionDos, null);
         this.getContentPane().add(JrBtnOpcionTres, null);
