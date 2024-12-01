@@ -21,7 +21,7 @@ public class PruebaJTextField extends JFrame {
     JTextField JtfSeis = new JTextField();
     // VerticalFlowLayout verticalFlowLayout1 = new VerticalFlowLayout(); // da
     // error de compilación clase que no existe
-    BorderLayout borderLayout1 = new BorderLayout();
+    FlowLayout flowLayout1 = new FlowLayout();
     JPasswordField JpfUno = new JPasswordField();
 
     /* Construcor por defecto */
@@ -30,7 +30,7 @@ public class PruebaJTextField extends JFrame {
         JtfSeis.setSelectionEnd(5);
         JtfSeis.setText(" También podemos cambiar la orientación ");
         JtfSeis.setHorizontalAlignment(SwingConstants.RIGHT);
-        this.getContentPane().setLayout(borderLayout1);
+        this.getContentPane().setLayout(flowLayout1);
         JtfDos.setText(" Prueba JTextField ");
         JtfUno.setText(" El texto puede empezar seleccionado ");
         JtfUno.setSelectionStart(5);
