@@ -15,7 +15,9 @@ import java.util.*;
 //import com.borland.jbcl.layout.*; // da error de compilación poque ya no existe
 public class PruebaJList extends JFrame {
     Vector v = new Vector();
-    BoxLayout boxLayout1 = new BoxLayout(null, 0);
+    // BoxLayout boxLayout1 = new BoxLayout(null, 0);
+    // da error en Tiempo de ejecución
+    FlowLayout flowLayout1 = new FlowLayout();
     JScrollPane scrollPaneUno = new JScrollPane();
     JScrollPane scrollPaneDos = new JScrollPane();
     JList JListUno = new JList();
@@ -24,7 +26,7 @@ public class PruebaJList extends JFrame {
     /* Constructor por defecto */
     public PruebaJList() {
         super.setTitle("Prueba JList");
-        this.getContentPane().setLayout(boxLayout1);
+        this.getContentPane().setLayout(flowLayout1);
         this.getContentPane().add(scrollPaneUno, null);
         scrollPaneUno.getViewport().add(JListUno, null);
         this.getContentPane().add(scrollPaneDos, null);
