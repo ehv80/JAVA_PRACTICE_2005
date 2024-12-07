@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.util.*;
 
 //import com.borland.jbcl.layout.*; // da error de compilación poque ya no existe
-public class PruebaJList() extends JFrame {
+public class PruebaJList extends JFrame {
     Vector v = new Vector();
     BoxLayout boxLayout1 = new BoxLayout(null, 0);
     JScrollPane scrollPaneUno = new JScrollPane();
@@ -22,16 +22,14 @@ public class PruebaJList() extends JFrame {
     JList JListDos = new JList();
 
     /* Constructor por defecto */
-    public PruebaJList()
-    {
+    public PruebaJList() {
         super.setTitle("Prueba JList");
         this.getContentPane().setLayout(boxLayout1);
         this.getContentPane().add(scrollPaneUno, null);
         scrollPaneUno.getViewport().add(JListUno, null);
         this.getContentPane().add(scrollPaneDos, null);
         scrollPaneDos.getViewport().add(JListDos, null);
-        for(int i=1; i<5; i++)
-        {
+        for (int i = 1; i < 5; i++) {
             v.addElement("Dato " + i);
         }
         JListUno.setListData(v);
