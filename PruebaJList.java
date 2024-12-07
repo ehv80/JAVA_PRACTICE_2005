@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.util.*;
 
 //import com.borland.jbcl.layout.*; // da error de compilación poque ya no existe
-public class PruebaJList()extends JFrame {
+public class PruebaJList() extends JFrame {
     Vector v = new Vector();
     BoxLayout boxLayout1 = new BoxLayout(null, 0);
     JScrollPane scrollPaneUno = new JScrollPane();
