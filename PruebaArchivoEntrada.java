@@ -44,4 +44,8 @@ public class PruebaArchivoEntrada {
             ex.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        new PruebaArchivoEntrada();
+    }
 }
