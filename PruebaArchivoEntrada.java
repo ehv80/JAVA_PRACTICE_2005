@@ -23,7 +23,7 @@ public class PruebaArchivoEntrada {
              */
             miArchivo = new FileInputStream(
                     "E:\\Users\\ehv80\\Documentos\\Programacion_en_Lenguaje_Java\\JAVA_PRACTICE_2005\\archivo_salida.txt");
-            while (miArchivo.read(linea) == 0) // lee una línea del archivo_salida.txt en cada iteración del bucle while
+            while (miArchivo.read(linea) != 0) // lee una línea del archivo_salida.txt en cada iteración del bucle while
             {
                 /*
                  * Debo convertir el byte[] a String para que la información leída del archivo
