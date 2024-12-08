@@ -47,13 +47,6 @@ public class PruebaArchivoAccesoAleatorio2 {
             RandomAccessFile archivo = new RandomAccessFile(
                     "E:\\Users\\ehv80\\Documentos\\Programacion_en_Lenguaje_Java\\JAVA_PRACTICE_2005\\archivo_acceso_aleatorio_2.txt",
                     "r");
-
-        } catch (FileNotFoundException ex) {
-            System.err.println("Error al abrir el archivo_Acceso_aleatorio_2.txt en módo solo lectura!");
-            System.err.println("Detalles de la FileNotFoundException capturada: " + ex.getMessage());
-            System.err.println("Detalles de la pila de llamadas: ");
-            ex.printStackTrace();
-        } finally {
             /*
              * Para leer el alumno de la posición 5 hacemos 5 x 20 = 100
              * entonces tenemos que ir a esa posición usando el método seek()
@@ -68,8 +61,17 @@ public class PruebaArchivoAccesoAleatorio2 {
              * la lectura
              */
             System.out.println(archivo.getFilePointer());
+            System.out.println("Quinto registro del archivo_acceso_aleatorio_2.txt leído y se cierra el archivo!");
             /* Cerramos el archivo */
             archivo.close();
+
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error al abrir el archivo_Acceso_aleatorio_2.txt en módo solo lectura!");
+            System.err.println("Detalles de la FileNotFoundException capturada: " + ex.getMessage());
+            System.err.println("Detalles de la pila de llamadas: ");
+            ex.printStackTrace();
+        } finally {
+            System.out.println("FIN!");
         }
     }
 
