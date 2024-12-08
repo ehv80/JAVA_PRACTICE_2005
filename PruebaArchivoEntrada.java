@@ -23,7 +23,7 @@ public class PruebaArchivoEntrada {
              */
             miArchivo = new FileInputStream(
                     "E:\\Users\\ehv80\\Documentos\\Programacion_en_Lenguaje_Java\\JAVA_PRACTICE_2005\\archivo_salida.txt");
-            while (miArchivo.read(linea)) // lee una línea del archivo_salida.txt en cada iteración del bucle while
+            while (miArchivo.read(linea) == 0) // lee una línea del archivo_salida.txt en cada iteración del bucle while
             {
                 /*
                  * Debo convertir el byte[] a String para que la información leída del archivo
@@ -33,7 +33,7 @@ public class PruebaArchivoEntrada {
                 // muestra en pantalla la línea leída desde el archivo como un String
             }
             System.out.println("No hay más líneas de texto en archivo_salida.txt y se cierra!");
-            mi.Archivo.close(); // cierra el archivo_salida.txt
+            miArchivo.close(); // cierra el archivo_salida.txt
         } catch (IOException ex) {
             /*
              * Tanto el constructor como los métodos write() y close() lanzan una excepción
