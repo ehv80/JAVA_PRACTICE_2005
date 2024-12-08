@@ -23,15 +23,15 @@ public class PruebaArchivoEntrada {
              */
             miArchivo = new FileInputStream(
                     "E:\\Users\\ehv80\\Documentos\\Programacion_en_Lenguaje_Java\\JAVA_PRACTICE_2005\\archivo_salida.txt");
-            while (miArchivo.read(linea) != 0) // lee una línea del archivo_salida.txt en cada iteración del bucle while
-            {
-                /*
-                 * Debo convertir el byte[] a String para que la información leída del archivo
-                 * sea entendible para nosotros
-                 */
-                System.out.println(new String(linea));
-                // muestra en pantalla la línea leída desde el archivo como un String
-            }
+            // lee toda la información desde el archivo_salida.txt y lo pone en el arreglo
+            // de 230 bytes
+            miArchivo.read(linea);
+            /*
+             * Debo convertir el byte[] a String para que la información leída del archivo
+             * sea entendible para nosotros
+             */
+            System.out.println(new String(linea));
+            // muestra en pantalla la información leída desde el archivo como un String
             System.out.println("No hay más líneas de texto en archivo_salida.txt y se cierra!");
             miArchivo.close(); // cierra el archivo_salida.txt
         } catch (IOException ex) {
