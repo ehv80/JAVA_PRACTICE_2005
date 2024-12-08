@@ -34,7 +34,7 @@ public class PruebaArchivoSalida {
                  * Grabo el número de línea correspondiente
                  * Agrego al final la secuencia de escape \n para que no grabe todo seguido
                  */
-                dato = "Línea (" + (i + 1) + ") \n";// es más uno porque ya hay una primera línea
+                dato = "Línea (" + (i + 2) + ") \n";// es más dos porque ya hay una primera línea escrita en el archivo
                 miArchivo.write(dato.getBytes());
             }
             /* Una vez terminada la escritura en el archivo_salida.txt lo cerramos */
