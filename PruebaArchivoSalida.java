@@ -16,14 +16,27 @@ public class PruebaArchivoSalida {
         String dato = new String();
         /* Intentamos gestionar Excepciones */
         try {
+            /*
+             * Creamos el archivo a través del constructor de la clase
+             * FileOutputStream(String nombreArchivo)
+             */
             miArchivo = new FileOutputStream(
                     "E:\\Users\\ehv80\\Documentos\\Programacion_en_Lenguaje_Java\\JAVA_PRACTICE_2005\\archivo_salida.txt");
-            dato = "Esta es la información que vamos a grabar en archivo_salida.txt";
+            dato = "Esta es la primera línea de información que vamos a grabar en archivo_salida.txt\n";
             /*
              * Recuerde que el método write() espera un array de bytes, así que usamos el
              * método getBytes() de String para obtener esto
              */
             miArchivo.write(dato.getBytes());
+            /* Vamos a grabar 20 líneas más mediante un bucle for */
+            for (int i = 0; i < 20; i++) {
+                /*
+                 * Grabo el número de línea correspondiente
+                 * Agrego al final la secuencia de escape \n para que no grabe todo seguido
+                 */
+                dato = "Línea (" + (i + 1) + ") \n";// es más uno porque ya hay una primera línea
+                miArchivo.write(dato.getBytes());
+            }
             /* Una vez terminada la escritura en el archivo_salida.txt lo cerramos */
             miArchivo.close();
         } catch (IOException ex) {
