@@ -3,7 +3,7 @@
  * Comenzaremos por FileOutputStream, el cual, como su nombre lo indica, crea un flujo de datos 
  * de salida a un archivo.
  */
-package pruebas; //comentado por que da error de compilacón paquete no encontrado
+//package pruebas; //comentado por que da error en tiempo de ejecución clase y paquete no encontrado
 
 import java.io.*;
 
