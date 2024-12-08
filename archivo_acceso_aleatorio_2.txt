@@ -1,0 +1,10 @@
+00001Ismael    6    
+00002Raúl      7    
+00003Lucrecia  8    
+00004Ricardo   9    
+00005Eusebio   5    
+00006Brenda    6    
+00007Elena     7    
+00008Ezequiel  8    
+00009Hector    9    
+00010Ismael    10   
