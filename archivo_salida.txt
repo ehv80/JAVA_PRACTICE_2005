@@ -1,5 +1,4 @@
 Esta es la primera línea de información que vamos a grabar en archivo_salida.txt
-Línea (1) 
 Línea (2) 
 Línea (3) 
 Línea (4) 
@@ -19,3 +18,4 @@ Línea (17)
 Línea (18) 
 Línea (19) 
 Línea (20) 
+Línea (21) 
