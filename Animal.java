@@ -12,8 +12,12 @@ public class Animal extends Thread {
 
     /* El Constructor por defecto instancia el objeto con valores por defecto */
     public Animal() {
+        this.nombre = "Perro";
         this.tipo = "Mamífero";
-        this.cantidadDePatas = 0;
+        this.cantidadDePatas = 4;
+        this.prioridad = 6;
+        /* Establece la prioridad del Thread a través del método de la clase padre */
+        super.setPriority(this.prioridad);
     }
 
     /* Constructor con parámetros */
@@ -37,6 +41,6 @@ public class Animal extends Thread {
 
     /* Sobrecargamos el método run */
     public void run() {
-        System.out.println("Llegó la " + this.nombre);
+        System.out.println("Llegó el-la " + this.nombre + "con prioridad: " + this.prioridad);
     }
 }
