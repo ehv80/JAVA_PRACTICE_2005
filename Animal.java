@@ -41,6 +41,6 @@ public class Animal extends Thread {
 
     /* Sobrecargamos el método run */
     public void run() {
-        System.out.println("Llegó el-la " + this.nombre + "con prioridad: " + this.prioridad);
+        System.out.println("Llegó el-la " + this.nombre + " con prioridad: " + this.prioridad);
     }
 }
