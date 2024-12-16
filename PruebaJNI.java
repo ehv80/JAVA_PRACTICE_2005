@@ -95,12 +95,16 @@ public class PruebaJNI {
  */
 /*
  * CREAR LA BIBLIOTECA
- * Lo que debemos hacer ahora es usar el comando javah
- * ( ¿javah PruebaJNI.java?) para obtener
+ * Lo que debemos hacer ahora es usar el comando javah para obtener
  * el archivo de cabeceras, comúnmente llamado headers,
  * del Lenguaje de Programación C. Este archivo nos dará los lineamientos
  * de cómo debemos escribir el código en el Lenguaje C. Una vez ejecutado
  * el comando javah quedará generado el archivo PruebaJNI.h
  * que se verá de la siguiente manera:
  * 
+ * Nota:
+ * ¿javah PruebaJNI.java?
+ * En JDK23 no existe javah: no se reconoce como un comando interno o externo,
+ * programa o archivo por lotes ejecutable
+ * Se crea el archivo manualmente: PruebaJNI.h en el mismo directorio
  */
