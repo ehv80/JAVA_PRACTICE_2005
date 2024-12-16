@@ -1,5 +1,5 @@
 /*
- * Nuestra Primera Clase con Métodos Nativos
+ * NUESTRA PRIMERA CLASE CON MÉTODOS NATIVOS
  * Lo que hacemos a través de la interfaz JNI es llamar a un método nativo desde
  * nuestra clase para que entienda
  * que es un método que está escrito fuera del programa y en otro lenguaje de
@@ -92,4 +92,15 @@ public class PruebaJNI {
  * porque no está en el java.library.path. El concepto es similar al de
  * classpath, solo que este camino no es el de las clases, sino el de las
  * bibliotecas.
+ */
+/*
+ * CREAR LA BIBLIOTECA
+ * Lo que debemos hacer ahora es usar el comando javah
+ * ( ¿javah PruebaJNI.java?) para obtener
+ * el archivo de cabeceras, comúnmente llamado headers,
+ * del Lenguaje de Programación C. Este archivo nos dará los lineamientos
+ * de cómo debemos escribir el código en el Lenguaje C. Una vez ejecutado
+ * el comando javah quedará generado el archivo PruebaJNI.h
+ * que se verá de la siguiente manera:
+ * 
  */
