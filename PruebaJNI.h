@@ -43,5 +43,5 @@ extern "C"
  * javah -stubs PruebaJNI
  *
  * Nota: recordar que en JDK23 ya no existe javah
- * Crearemos a mano el archivo de stusbs llamándolo PruebaJNI.c
+ * Crearemos a mano el archivo de stusbs llamándolo Java_PruebaJNI_mostrarMensaje.c
  */
