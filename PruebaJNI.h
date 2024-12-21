@@ -20,6 +20,7 @@ extern "C"
      * Signature:   ()V
      */
     JNIEXPORT void JNICALL Java_PruebaJNI_mostrarMensaje(JNIEnv *, jobject);
+    JNIEXPORT jfloat JNICALL Java_PruebaJNI_multiplicar(JNIEnv *, jobject, jfloat, jint);
 #ifdef __cplusplus
 }
 #endif

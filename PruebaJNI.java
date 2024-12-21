@@ -53,6 +53,15 @@ public class PruebaJNI {
     public native void mostrarMensaje();
 
     /*
+     * PARÁMETROS
+     * Ahora compliquemos un poco más las cosas creando otro método nativo, pero en
+     * este caso, que reciba dos parámetros y
+     * devuelva un resultado en PruebaJNI.java
+     * El método que vamos a agregar será el siguiente:
+     */
+    public native float multiplicar(float a, int b);
+
+    /*
      * En el ejemplo vemos que está presente sólo la declaración del método nativo y
      * que el código está escrito en otro Lenguaje de Programación fuera de nuestras
      * fuentes Java.
@@ -66,6 +75,7 @@ public class PruebaJNI {
         PruebaJNI p = new PruebaJNI();
         /* Llamamos al método nativo mostrarMensaje() */
         p.mostrarMensaje();
+        p.multiplicar(45, 3);
     }
 }
 /*
