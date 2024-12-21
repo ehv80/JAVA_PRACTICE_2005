@@ -14,34 +14,33 @@
  * dos placas de red, tendremos tres direcciones de IP, una por cada placa más la dirección de loopback.
  * Para obtener todas las IP de una PC, Java nos provee el método getAllByName() de la clase InetAddress.
  * Este método nos devuelve un arreglo de instancias de la clase InetAddress.
- * /
- 
- import java.net.*; 
- 
- public class PruebaArrayDeIP
- {
+ * 
+ */
+
+import java.net.*;
+
+public class PruebaArrayDeIP {
     /* Constructor por defecto */
-    public PruebaArrayDeIP()
-    {
-        try
-        {
-            /* Creamos un arreglo de instancias de la clase InetAddress de nombre i usando el método getAllByName() */
+    public PruebaArrayDeIP() {
+        try {
+            /*
+             * Creamos un arreglo de instancias de la clase InetAddress de nombre i usando
+             * el método getAllByName()
+             */
             InetAddress[] i = InetAddress.getAllByName("LILANDRAX");
-            System.out.println("Nombre de la computadora: " + InetAddress.getHostName() );
+            System.out.println("Nombre de la computadora: LILANDRAX");
             /* Imprimimos todas las IP recorriendo el arrelgo */
-            for(int j=0 ; j<i.lenght ; j++)
-                System.out.println("IP "+ j + " : " + i[j].getHostAddress()); 
-        }
-        catch(UnknownHostException ex)
-        {
-            System.err.pritnln("No se pueden resolver las direcciones IP de la PC!");
-            System.err.pritnln("Detalle del error: " + ex.getMessage() );
-            System.err.pritnln("Detalle de la pila de llamadas: ");
+            for (int j = 0; j < i.length; j++)
+                System.out.println("IP " + j + " : " + i[j].getHostAddress());
+        } catch (UnknownHostException ex) {
+            System.err.println("No se pueden resolver las direcciones IP de la PC!");
+            System.err.println("Detalle del error: " + ex.getMessage());
+            System.err.println("Detalle de la pila de llamadas: ");
             ex.printStackTrace();
         }
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         new PruebaArrayDeIP();
     }
 }
