@@ -7,6 +7,9 @@ import java.io.*;
 import java.net.*;
 
 public class Cliente {
+    InputStreamReader isr;
+    OutputStreamWriter osw;
+
     /* Constructor por defecto */
     public Cliente() {
         try {
@@ -16,10 +19,17 @@ public class Cliente {
              * al puerto 5566
              */
             Socket cliente = new Socket("192.168.1.4", 5566);
-
+            /*
+             * Creamos el canal de entrada
+             */
+            isr = new InputStreamReader(cliente.getInputStream());
+            /*
+             * Creamos el canal de salida
+             */
+            osw = new OutputStreamWriter(cliente.getOutputStream());
         } catch (IOException ex) {
             System.err.println("No se pudo establecer la conexión con el Servidor 192.168.1.4 en el puerto 5566 !");
-
+            System.err.println("Detalle del error: " + ex.getMessage());
             ex.printStackTrace();
         }
     }
