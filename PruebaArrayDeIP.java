@@ -27,7 +27,7 @@
         {
             /* Creamos un arreglo de instancias de la clase InetAddress de nombre i usando el método getAllByName() */
             InetAddress[] i = InetAddress.getAllByName("LILANDRAX");
-            System.out.println("Nombre de la computadora: " + i.getHostName() );
+            System.out.println("Nombre de la computadora: " + InetAddress.getHostName() );
             /* Imprimimos todas las IP recorriendo el arrelgo */
             for(int j=0 ; j<i.lenght ; j++)
                 System.out.println("IP "+ j + " : " + i[j].getHostAddress()); 
