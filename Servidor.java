@@ -34,14 +34,51 @@ public class Servidor {
              * llamadas
              */
             Socket s = servidor.accept();
+            while (true) {
+                /*
+                 * Creamos el canal de entrada
+                 */
+                isr = new InputStreamReader(s.getInputStream());
+                /*
+                 * Creamos el canal de salida
+                 */
+                osw = new OutputStreamWriter(s.getOutputStream());
+                /*
+                 * Creamos un arreglo para recibir las peticiones
+                 */
+                char[] mensaje = new char[256];
+                /*
+                 * Leemos del canal de entrada
+                 */
+                isr.read(mensaje, 0, 255);
+                /*
+                 * De acuerdo con el mensaje recibido, escribimos lo que corresponda
+                 * en el canal de salida
+                 */
+                String msg = new String(mensaje).trim();
+                if (msg.compareTo("Hola") == 0) {
+                    osw.write("Hola!!!");
+                    osw.flush();
+                } else if (msg.compareTo("¿Cómo estás?") == 0) {
+                    osw.write("Bien");
+                    osw.flush();
+                } else if (msg.compareTo("Chau, hasta luego...") == 0) {
+                    osw.write("Chau... Nos vemos.");
+                    osw.flush();
+                } else if (msg.compareTo("Ya puede terminar") == 0) {
+                    osw.write("Gracias");
+                    osw.flush();
+                    System.out.println("Me dijeron que puedo terminar...");
+                    break;
+                }
+            }
             /*
-             * Creamos el canal de entrada
+             * Muy importante cerrar los canales de entrada y salida y el ServerSocket
              */
-            isr = new InputStreamReader(s.getInputStream());
-            /*
-             * Creamos el canal de salida
-             */
-            osw = new OutputStreamWriter(s.getOutputStream());
+            isr.close();
+            osw.close();
+            servidor.close();
+
         } catch (IOException ex) {
             System.err.println("No se puede escuchar en el puerto 5566");
             System.err.println("Detalle del error: " + ex.getMessage());
@@ -73,4 +110,30 @@ public class Servidor {
  * usaremos las clases
  * InputStreamReader para entrada y OutputStreamWriter para salida.
  * Vamos a agregar los objetos a nuestro código. Quedará para el Servidor:
+ */
+/*
+ * Ahora si, nuestros programas están listos para comunicarse, pero debemos
+ * definir cómo van a hacerlo, en otras palabras, cómo se van a entender.
+ * Para esto es que tenemos que crear un protocolo de comunicación.
+ * Nuestro primer protocolo
+ * Como vimos, para que nuestros programas se comuniquen, debemos proveer un
+ * protocolo. A los efectos de simplificar el ejemplo, vamos a definir una
+ * charla
+ * entre los dos programas. Es decir que el protocolo será el siguiente:
+ * 
+ * Mensaje _____________________________ Respuesta
+ * Hola ________________________________ Hola!!!
+ * ¿Cómo estás? ________________________ Bien
+ * Chau, hasta luego... ________________ Chau... Nos vemos.
+ * Ya puede terminar ___________________ Gracias
+ * Tabla 1. Diálogo simulado entre los dos programas
+ * 
+ * Una vez que tenemos definido el protocolo, vamos a agregar el código
+ * correspondiente
+ * a nuestro programa.
+ * Notemos en este punto que cada vez que nuestro Servidor atendía una llamada,
+ * terminaba; así
+ * que una primera modificación será agregar el código del Servidor en un ciclo
+ * para que no corte hasta que reciba el mensaje de salida
+ * El código del Servidor es, entonces el siguiente:
  */
