@@ -4,7 +4,7 @@
 
 import java.net.*;
 import java.io.*;
-import sun.net.*;
+//import sun.net.*; //comentado porque ya no existe en JDK 23
 
 public class ClienteDatagramas {
     /* Constructor por defecto */

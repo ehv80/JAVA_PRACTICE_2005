@@ -20,7 +20,7 @@
 import java.net.*;
 import java.io.*;
 import java.util.*;
-import sun.net.*;
+//import sun.net.*; //comentado porque ya no existe en JDK 23
 
 public class ServidorDatagramas {
     /*
