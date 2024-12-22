@@ -55,7 +55,7 @@ public class Cliente {
              */
             this.mensaje("Hola");
             System.out.println("Servidor respondió: " + this.respuesta());
-            this.mensaje("Cómo estás?");
+            this.mensaje("¿Cómo estás?");
             System.out.println("Servidor respondió: " + this.respuesta());
             this.mensaje("Chau, hasta luego...");
             System.out.println("Servidor respondió: " + this.respuesta());
