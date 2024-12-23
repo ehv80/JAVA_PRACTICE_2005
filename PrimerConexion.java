@@ -239,7 +239,8 @@ public class PrimerConexion {
              * Creamos la conexión al gestor de base de datos InterBase
              */
             Connection con = DriverManager.getConnection(
-                    "jdbc:interbase://192.168.1.4/E:/Users/ehv80/Documentos/InterBase/ESCUELA", "SYSDBA", "masterkey");
+                    "jdbc:interbase://192.168.1.4/E:/Users/ehv80/Documentos/InterBase/ESCUELA.IB", "SYSDBA",
+                    "masterkey");
             /*
              * Creamos una Statement (sentencia SQL)
              */
