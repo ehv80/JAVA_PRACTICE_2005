@@ -1,4 +1,5 @@
 import java.util.*;
+import java.sql.*;
 
 /* Uso extends para declarar que la Clase Alumno está heredando de la Clase Persona */
 public class Alumno extends Persona {
@@ -7,7 +8,9 @@ public class Alumno extends Persona {
      * debo declarar porque los heredo desde Persona
      */
     private Integer ID_ALumno;
-    private Date fechaNacimiento;
+    private java.sql.Date fechaNacimiento;
+    private Notas notas;
+    private Direccion direccion;
     private float notaPrimerParcial;
     private float notaSegundoParcial;
 
@@ -44,6 +47,45 @@ public class Alumno extends Persona {
         System.out.println("Nota del Segundo Parcial: " + this.notaSegundoParcial);
         System.out.println("Promedio de las notas de los parciales: " + this.getPromedio());
     }
+
+    /*
+     * Recibimos el Statement como parámetro para no hacer la conexión
+     * dentro del método
+     */
+    public boolean buscar(Integer ID_ALumno, Statement stmt) throws Exception {
+        boolean encontrado = false;
+        /*
+         * Ejecutamos la sentencia SQL para consultar por el código de alumno
+         */
+        ResultSet rs = stmt.executeQuery("SELECT * FROM ALUMNOS WHERE COD_ALUMNO='" + ID_ALumno + "'");
+        if (rs.first()) {
+            /*
+             * Si hay resultado, instanciamos los atributos de la clase
+             * con los valores de la base de datos
+             */
+            this.ID_ALumno = new Integer(rs.getInt("cod_alumno"));
+            super.nombre = rs.getString("nombre");
+            this.fechaNacimiento = rs.getDate("fecha_nacimiento");
+            /*
+             * Como Dirección es un objeto, usamos su propio método buscar()
+             * pasándole como parámeto el código de dirección de la base de datos
+             */
+            this.direccion.buscar(rs.getInt("cod_direccion"));
+            /*
+             * Con Notas hacemos los mismo pero el código de la tabla notas
+             * es el código de alumno
+             */
+            super.nombre.buscar(ID_ALumno);
+            /*
+             * Finalmente, como fue encontrado ponemos esta variable a true
+             */
+            encontrado = true;
+        }
+        /*
+         * Devolvemos encontrado
+         */
+        return (encontrado);
+    }
 }
 /*
  * ARQUITECTURA DE UNA APLICACIÓN
@@ -66,4 +108,18 @@ public class Alumno extends Persona {
  * Entonces comenzando con los campos propios de la tabla
  * y dejando a un lado las claves foráneas, nuestro objeto de la clase Alumno
  * estará definido de la siguiente manera:
+ */
+/*
+ * Entonces, el objeto de la clase Alumno, ahora sí completo quedará:
+ * (agregándole un objeto de la clase Direccion y un objeto de la clase Notas)
+ */
+/*
+ * Ahora definiremos los métodos que interactúan con la base de datos.
+ * A estos métodos los llamaremos buscar(), grabar(), borrar(), etc, y en ellos
+ * representaremos las acciones que necesitemos que el objeto haga
+ * sobre la base de datos.
+ * Haremos el método buscar() de la clase Alumno, que recibe como parámetro
+ * el código de alumno y devuelve un boolean; si este boolean es true,
+ * significa que el alumno fue encontrado. Por otro lado, el método lanzará
+ * las excepciones para tratarlas en la interfaz y no en el objeto.
  */
