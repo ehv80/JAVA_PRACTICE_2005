@@ -1,0 +1,9 @@
+CREATE TABLE Direccion (
+    COD_DIRECCION int NOT NULL,
+    CALLE varchar(25),
+    NUMERO varchar(25),
+    LOCALIDAD varchar(25),
+    CONSTRAINT PK_DIRECCION PRIMARY KEY (COD_DIRECCION)
+)
+INSERT INTO DIRECCION VALUES (1, "Sarmiento", "1554", "Casilda")
+INSERT INTO DIRECCION VALUES (2, "La Rioja", "2585", "Casilda")
