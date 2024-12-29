@@ -128,8 +128,13 @@ public class PruebaApplet {
     }
 }
 /*
- * Luego de compilar este PruebaApplet.java,
- * como siempre, vamos a crear el programa de prueba, pero esta vez
+ * Luego de compilar este PruebaApplet.java, con el comando:
+ * 
+ * #> javac PruebaApplet.java
+ * 
+ * se genera el archivo de bytecodes: PruebaApplet.class
+ * 
+ * Como siempre, vamos a crear el programa de prueba, pero esta vez
  * no es un método main(), sino un nuevo archivo HTML: PruebaApplet.html
  * con el siguiente contenido:
  * 
@@ -137,4 +142,10 @@ public class PruebaApplet {
  * <APPLET CODE="PruebaApplet.class" WIDTH=300 HEIGHT=100>
  * </APPLET>
  * </HTML>
+ * 
+ * Como vemos en la Figura 2, a pesar de no tener código, el applet
+ * muestra una pantalla gris de 300 por 100. (En mi computadora solo se ve
+ * una página en blanco tanto en Microsoft Edge, como en Mozilla Firefox
+ * como en Google Chrome). Este tamaño lo definimos con el código de HTML,
+ * con las etiquetas WIDTH (Ancho) y HEIGHT (Alto).
  */
