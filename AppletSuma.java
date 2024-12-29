@@ -63,4 +63,66 @@ public class AppletSuma extends JApplet {
  * que genera el archivo AppletSuma.class
  * 
  * Luego creamos el archivo HTML: AppletSuma.html
+ * con el siguiente código:
+ * <HTML>
+ * 
+ * <HEAD>
+ * <TITLE>
+ * Página HTML de Prueba AppletSuma.html
+ * </TITLE>
+ * </HEAD>
+ * 
+ * <BODY>
+ * <H1>Ingrese dos números y presione el botón sumar</H1>.<br>
+ * <APPLET codebase="." code="AppletSuma.class" name="Suma" width="400"
+ * height="300" hspace="0" vspace="0">
+ * </APPLET>
+ * </BODY>
+ * 
+ * </HTML>
+ * 
+ * Lo único que hicimos fue configurar los parámetros del applet.
+ * La siguiente tabla describe para qué sirven estos parámetros:
+ * 
+ * PARÁMETRO __________ DESCRIPCIÓN
+ * 
+ * codebase ____________ Permite indicar al navegador el directorio
+ * _____________________ donde se encuentra el applet, en caso de
+ * _____________________ poner . significa que el HTML y el applet
+ * _____________________ están en el mismo directorio.
+ * 
+ * code ________________ Permite poner el nombre completo del applet
+ * _____________________ que tiene el método init(). Note que en
+ * _____________________ nuestro ejemplo tiene el nombre del paquete
+ * _____________________ delante de la clase (como está comentado no es así)
+ * 
+ * name ________________ Una cadena que describe el applet. Lo que pongamos
+ * _____________________ acá se mostrará en la barra de estado del navegador.
+ * 
+ * width _______________ Ancho del applet
+ * 
+ * height ______________ Alto del applet
+ * 
+ * hspace ______________ Define el espacio horizontal que debe quedar alrededor
+ * _____________________ del applet
+ * 
+ * vspace ______________ Define el espacio vertical que debe quedar alrededor
+ * _____________________ del applet
+ */
+/*
+ * SONIDOS EN LOS APPLETS
+ * Nuestros applets pueden incluir sonidos a través de la interfaz
+ * AudioClip. El archivo de sonido lo podemos cargar desde una
+ * dirección URL a través del método getAudioClip() para su
+ * posterior ejecución, o través del método play(), también
+ * desde una dirección URL, con la diferencia de que este método
+ * lo carga y lo ejecuta. Otros métodos importantes que provee la
+ * interfaz AudioClip son loop() para que repita el sonido
+ * cada vez que termine y stop() para detener la ejecución del sonido.
+ * 
+ * En cuanto a estos applets, es recomendable cargar los archivos
+ * de sonido a través de un thread, ya que si tardan en cargarse,
+ * el applet tardará en devolverle el control al usuario.
+ * Si lo hacemos en un thread distinto, el usuario puede comenzar
+ * a usar el applet mientras se está cargando el sonido.
  */
