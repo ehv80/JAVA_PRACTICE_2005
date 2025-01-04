@@ -1,0 +1,21 @@
+<!-- Imprimir la página actual: -->
+<HTML>
+
+<HEAD>
+    <TITLE>JavaScript que imprime la página actual</TITLE>
+</HEAD>
+
+<BODY>
+    <script LANGUAGE="JavaScript">
+        function imprimir() {
+            if (window.print)
+                window.print();
+            else
+                alert("Su navegador web no soporta esta opción.");
+        }
+    </script>
+    <A HREF="javascript:imprimir()">Imprimir Página Web</A>
+</BODY>
+<FOOTER>Fin de JavaScript que imprime la página actual</FOOTER>
+
+</HTML>
