@@ -1,0 +1,35 @@
+<!-- 
+ JAVASCRIPT
+
+ Con JavaScript se puede generar HTML dinámicamente en el cliente. Ésta es una
+ capacidad útil, pero solo maneja situaciones en que la información dinámica está
+ basada en el entorno del cliente, igual que los applets, pero es mucho menos poderosa,
+ se usa para cosas más simples como validaciones o efectos de fuente o animación.
+ Como se ejecuta en el cliente, no puede acceder a los recursos en el lado del servidor,
+ como bases de datos.
+ A continuación vamos a ver algunos ejemplos de uso de JavaScript:
+
+ Detectar el navegador que usa el cliente:
+-->
+<HTML>
+
+<HEAD>
+    <TITLE>JavaScript que detecta el navegador</TITLE>
+</HEAD>
+
+<BODY>
+    <!-- Colocar dentro de la etiqueta BODY de HTML -->
+    <script LANGUAGE="JavaScript">
+        var nombre = navigator.appName;
+        if (nombre == "Microsoft Internet Explorer")
+            url = ("explorer.htm");
+        else
+            url = ("netscape.htm");
+        window.location = url;
+    </script>
+</BODY>
+<FOOTER>
+    Fin de JavaScript que detecta el navagedor
+</FOOTER>
+
+</HTML>
