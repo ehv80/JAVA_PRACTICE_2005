@@ -1,0 +1,47 @@
+<!-- 
+Validar un formulario: note que la función validar recibe el form completo;
+luego, para hacer referencia a cada componente del form, lo hacemos a través
+del nombre que le dimos en HTML. Si el form tiene algún campo inválido, volvemos
+con return; si no se cumple ninguna condición de los if, hacemos form.submit() 
+-->
+<HTML>
+
+<HEAD>JavaScript que valida un formulario</HEAD>
+
+<BODY>
+    <script LANGUAGE="JavaScript">
+        function validar(form) {
+            if (form.Nombre.value = "") {
+                alert("Por favor ingrese el Nombre");
+                form.Nombre.focus();
+                return;
+            }
+            if (form.Telefono.value = "") {
+                alert("Por favor ingrese su Teléfono");
+                form.Telefono.focus();
+                return;
+            }
+            if (form.Email.value.indexOf('@', 0) == -1 || form.Email.value.indexOf('.', 0) == -1) {
+                alert("Dirección de e-mail inválida");
+                form.Email.focus();
+                return;
+            }
+            form.submit();
+        }
+    </script>
+</BODY>
+<FOOTER>Fin de JavaScript que valida un formulario</FOOTER>
+
+</HTML>
+
+<!-- 
+Como vimos en los ejemplos, el código se encierra entre las etiquetas
+
+<script LANGUAGE="JavaScript">
+</script>
+
+Y en el caso de tener funciones, la invocación desde el HTML es:
+
+javascript:nombreDeLaFuncion()
+
+-->
