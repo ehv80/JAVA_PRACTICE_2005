@@ -1,0 +1,59 @@
+<!-- 
+ SERVLETS Y PÁGINAS JSP
+ En el capítulo anterior vimos programas
+ que se ejecutan del lado del cliente, 
+ pero en la mayoría de los casos
+ necesitamos que el programa se ejecute
+ del lado del servidor. Para eso es que
+ existen los servlets y las páginas JSP,
+ los cuales abordaremos en este capítulo
+
+ ¿QUÉ SON LOS SERVLETS?
+ Los servlets son programas que se ejecutan en un servidor web y sirven para
+ construir páginas web con contenidos enviados por los usuarios, intentando que
+ la página sea a medida de ellos.
+ Esta tecnología se basa en el concepto de que la información varía con el tiempo;
+ por ejemplo, el tipo de cambio de las monedas, los precios de las acciones de las
+ empresas, la temperatura, etc. La idea es, entonces, construir una página web normal
+ con un servlet que actualice esta información considerada variable.
+
+ Por otra parte, los servlets pueden acceder a bases de datos, es decir que podemos
+ hacer catálogos con productos y precios, y que los precios estén siempre al día.
+ Cuando la página web tiene servlets, la Máquina Virtual Java permanece en funcionamiento,
+ y cada petición es manejada por un hilo. Habrá entonces tantos threads (hilos) como 
+ peticiones, pero sólo una copia de la clase Servlet.
+
+ Pero antes de comenzar de lleno con los servlets, hablemos de JSP y JavaScript
+
+ JSP (JAVA SERVER PAGES)
+
+ JSP es una tecnología a través de la cuál podemos mezclar HTML estático con
+ HTML generado dinámicamente. De todas maneras, debemos tener en cuenta que
+ cuando el JSP llegue al web container, se ejecutará como un servlet. Esto significa
+ que la diferencia más grande que encontramos entre servlet y JSP es que el primero
+ está precompilado y el segundo se compila en el servidor. A continuación veremos
+ un ejemplo más claro de JSP:
+
+ -->
+
+<HTML>
+
+<HEAD>
+    <TITLE>
+        Ejemplo de JSP
+    </TITLE>
+</HEAD>
+
+<BODY>
+    <H1>Ejemplo de JSP</H1>
+    Texto HTML - <% out.println("Texto del JSP"); %>
+</BODY>
+
+</HTML>
+
+<!-- 
+ Como vemos la etiqueta que nos permite incluir JSP en la Página HTML es <% %>
+ El resultado en un navegador será el mostrado en la Figura 1.
+ Como vemos, el texto HTML y el JSP se ven exactamente iguales, es decir
+ que el usuario común no podría identificar cuál es cuál.
+ -->
