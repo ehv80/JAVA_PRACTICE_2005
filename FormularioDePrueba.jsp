@@ -12,6 +12,7 @@
     <FORM ACTION="/servlet/MuestraParametros" METHOD="POST">
         Nombre : <INPUT TYPE="TEXT" NAME="nombre"> <br>
         Edad : <INPUT TYPE="TEXT" NAME="edad"> <br>
+        <INPUT TYPE="SUBMIT" VALUE="Enviar">
         </CENTER>
     </FORM>
 </BODY>
