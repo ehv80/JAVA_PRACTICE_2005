@@ -63,3 +63,17 @@ public class MuestraParametros extends HttpServlet {
         doGet(request, response);
     }
 }
+/*
+ * Simplemente llamaremos al método getParameter() de HttpServletRequest,
+ * (Nota: ya no existe más en JDK 23)
+ * y pediremos el parámetro como argumento teniendo en cuenta que los nombres
+ * de parámetros son sensibles a las mayúsculas. El valor de retorno es un
+ * String correspondiente al valor uudecode de la primera ocurrencia del
+ * parámetro. Devuelve un String vacío si el parámetro existe, pero no tiene
+ * valor o null si no existe dicho parámetro.
+ * Si el parámetro tuviera más de un valor, deberíamos llamar al método
+ * getParameterValues() en lugar de a getParameter(), ya que éste devuelve
+ * un array de String.
+ * Finalmente, la Figura 7 muestra el formulario, y la Figura 8,
+ * el resultado del servlet.
+ */
