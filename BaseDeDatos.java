@@ -92,7 +92,7 @@ public class BaseDeDatos
         java.util.Date horaDeSistema = new java.util.Date();
         /* Grabamos el log */
         stmt.executeUpdate("insert into log values
-        (" + this.indice +  ",'" + formatoFecha.format(fechaDeSistema) + "','" + formatoHora.format(horaDeSistema) + "','" + msg + "')");
+            (" + this.indice +  ",\"" + formatoFecha.format(fechaDeSistema) + "\"," + formatoHora.format(horaDeSistema) + "\"," + msg + "\")");
         this.indice++;
     }
     /*
