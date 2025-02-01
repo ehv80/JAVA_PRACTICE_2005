@@ -51,8 +51,7 @@
 import java.sql.*;
 import java.text.*;
 
-public class BaseDeDatos
-{
+public class BaseDeDatos {
     Connection con = null;
     Statement stmt = null;
     int indice = 0;
@@ -60,16 +59,14 @@ public class BaseDeDatos
     /*
      * Constructor por defecto
      */
-    public BaseDeDatos()
-    {
+    public BaseDeDatos() {
         // nada
     }
 
     /*
      * El método conectar va a establecer la conexión con la base de datos
      */
-    public void conectar() throws Exception
-    {
+    public void conectar() throws Exception {
         /* Usamos el puente JDBC-ODBC */
         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
         /* Creamos un DNS en Windows de Nombre chat */
@@ -82,8 +79,7 @@ public class BaseDeDatos
      * El método grabar se encargará de grabar la información
      * en la tabla log
      */
-    public void grabar(String msg) throws Exception
-    {
+    public void grabar(String msg) throws Exception {
         /* Tomamos la fecha del sistema */
         DateFormat formatoFecha = new java.text.SimpleDateFormat("dd/MM/yyyy");
         java.util.Date fechaDeSistema = new java.util.Date();
@@ -91,21 +87,21 @@ public class BaseDeDatos
         DateFormat formatoHora = new java.text.SimpleDateFormat("HH:mm:ss");
         java.util.Date horaDeSistema = new java.util.Date();
         /* Grabamos el log */
-        stmt.executeUpdate("insert into log values(" + this.indice +  ",\""; + formatoFecha.format(fechaDeSistema) + "\"," + formatoHora.format(horaDeSistema) + "\"," + msg + "\")");
+        stmt.executeUpdate("insert into log values(" + this.indice + ",'" + formatoFecha.format(fechaDeSistema) + "',"
+                + formatoHora.format(horaDeSistema) + "','" + msg + "')");
         this.indice++;
     }
+
     /*
      * Cierra la conexión a la base de datos
      */
-    public void cerrar() throws Exception
-    {
+    public void cerrar() throws Exception {
         stmt.close();
         con.close();
     }
 
     /* Este método nos permite ejecutar consultas en la base de datos */
-    public ResultSet ejecutarSQL(String sql) throws Exception
-    {
+    public ResultSet ejecutarSQL(String sql) throws Exception {
         return (this.stmt.executeQuery(sql));
     }
 }
