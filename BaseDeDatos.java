@@ -87,7 +87,7 @@ public class BaseDeDatos {
         DateFormat formatoHora = new java.text.SimpleDateFormat("HH:mm:ss");
         java.util.Date horaDeSistema = new java.util.Date();
         /* Grabamos el log */
-        stmt.executeUpdate("insert into log values(" + this.indice + ",'" + formatoFecha.format(fechaDeSistema) + "',"
+        stmt.executeUpdate("insert into log values(" + this.indice + ",'" + formatoFecha.format(fechaDeSistema) + "','"
                 + formatoHora.format(horaDeSistema) + "','" + msg + "')");
         this.indice++;
     }
