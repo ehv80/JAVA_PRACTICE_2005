@@ -146,7 +146,7 @@ public class ClienteChat extends Frame implements Runnable
             Socket s = new Socket(TxIP.getText(), Integer.parseInt(TxPuerto.getText()));
             /* Creamos los buffers de entrada y salida */
             this.i = new DataInputStream( new BufferedInputStream( s.getInputStream()));
-            this.o = new DataOuputStream( new BufferedoutputStream( s.getOutputStream()));
+            this.o = new DataOuputStream( new BufferedOutputStream( s.getOutputStream()));
         }
         catch(Exception ex)
         {
