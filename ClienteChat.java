@@ -37,7 +37,7 @@ public class ClienteChat extends Frame implements Runnable
     JButton BtnConecar = new JButton();
     BorderLayout borderLayout2 = new BorderLayout();
     JButton BtnSalir = new JButton();
-    JScrollPane ScrollPane = new JscrollPane();
+    JScrollPane ScrollPane = new JScrollPane();
     JTextArea JTxTexto = new JTextArea();
     /* Constructor por defecto */
     public ClienteChat()
@@ -112,7 +112,7 @@ public class ClienteChat extends Frame implements Runnable
         { public void actionPerformed(ActionEvent e)
         { BtnSalir_actionPerformed(e);}});
         PanelDatosConexion.setMinimumSize( new Dimension(350, 27));
-        JtxTexto.setEditable(false);
+        JTxTexto.setEditable(false);
         ScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(PanelCliente, BorderLayout.CENTER);
         this.add(PanelDatosConexion, BorderLayout.NORTH);
@@ -130,7 +130,7 @@ public class ClienteChat extends Frame implements Runnable
         PanelDatosConexion.add(TxPuerto, null);
         PanelDatosConexion.add(BtnConecar, null);
         PanelDatosConexion.add(BtnSalir, null);
-        ScrollPane.getViewport().add(JtxTexto, null);
+        ScrollPane.getViewport().add(JTxTexto, null);
         super.pack();
         super.show();
     }
@@ -146,7 +146,7 @@ public class ClienteChat extends Frame implements Runnable
             Socket s = new Socket(TxIP.getText(), Integer.parseInt(TxPuerto.getText()));
             /* Creamos los buffers de entrada y salida */
             this.i = new DataInputStream( new BufferedInputStream( s.getInputStream()));
-            this.o = new DataOuputStream( new BufferedOutputStream( s.getOutputStream()));
+            this.o = new DataOutputStream( new BufferedOutputStream( s.getOutputStream()));
         }
         catch(Exception ex)
         {
