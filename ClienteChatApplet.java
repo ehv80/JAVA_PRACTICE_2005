@@ -169,15 +169,11 @@ public class ClienteChatApplet extends Applet implements Runnable {
         }
     }
 
-    void TxMensaje_actionPerformed(ActionEvent e)
-    {
-        try
-        {
-            o.writeUTF((String)TxMensaje.getText());
-            o.flush()
-        }
-        catch(IOException ex)
-        {
+    void TxMensaje_actionPerformed(ActionEvent e) {
+        try {
+            o.writeUTF((String) TxMensaje.getText());
+            o.flush();
+        } catch (IOException ex) {
             JTxTexto.append("Error de Entrada/Salida : " + ex.getMessage() + "\n");
         }
         TxMensaje.setText(new String());
