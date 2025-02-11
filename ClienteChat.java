@@ -33,7 +33,9 @@ public class ClienteChat extends Frame implements Runnable
     JTextField TxMensaje = new JTextField();
     BoxLayout2 boxLayout21 = new BoxLayout2();
     JLabel LbPuerto = new JLabel();
+    JLabel LbIP = new JLabel();
     JTextField TxIP = new JTextField();
+    JTextField TxPuerto = new JTextField();
     JButton BtnConecar = new JButton();
     BorderLayout borderLayout2 = new BorderLayout();
     JButton BtnSalir = new JButton();
